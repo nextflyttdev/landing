@@ -8,13 +8,12 @@ const Footer = () => {
     <footer className="bg-neutral-100 bg-opacity-10 text-sm">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
-          <div className="flex mb-6 md:mb-0 p-0">
-            <Link className="flex items-start justify-start m-0 p-0" href="/">
-              <img src={"/"} className={"pr-44"} alt={"Nextflytt Logga"} />
+          <div className="flex justify-center  mb-6 md:mb-0 p-0">
+            <Link className="flex items-start justify-center md:justify-start m-0 p-0" href="/">
+              <img src={"/images/logo.png"} className={" w-40 md:w-60"} alt={"Nextflytt Logga"} />
             </Link>
           </div>
-
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid max-w-2xl grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
               <p className="mb-6 text-md font-semibold uppercase">Kontakt</p>
               <ul className="font-light text-content flex flex-col gap-3">

@@ -8,6 +8,7 @@ const Index = () => {
             <img className=' w-full object-contain bg-center' src={"/images/services.png"}/>
         </section>
         <SectionContainer>
+          <></>
             
         </SectionContainer>
     </div>

@@ -66,6 +66,10 @@ const TopBar = ({
     title: "Next Flytt",
   },
   menu = [
+      {
+      title: "Startsida",
+      url: "/",
+    },
     {
       title: " Våra tjänster",
       url: "/alla-vara-tjanster",
@@ -86,8 +90,9 @@ const TopBar = ({
       url: "/blog",
     },
     {
-      title: "Kontakt",
-      url: "/kontakt",
+      title: "08 1234567",
+      url: "tel:081234567",
+      className:"text-secondary hover:text-secondary hover:bg-secondary/10"
     },
   ],
   button = {
@@ -102,12 +107,12 @@ const TopBar = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             {/* Logo */}
-            <a href={logo.url} className="flex items-center gap-2">
+            <Link href={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
               <span className="text-lg font-semibold sr-only tracking-tighter">
                 {logo.title}
               </span>
-            </a>
+            </Link>
           </div>
           <div className="flex items-center">
             <NavigationMenu>
@@ -197,10 +202,11 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <NavigationMenuItem key={item.title}>
       <NavigationMenuLink
-        href={item.url}
-        className="bg-background hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition-colors"
+       asChild
+        
+        className={cn("bg-background text-sec hover:bg-muted hover:text-accent-foreground group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-semibold transition-colors",item.className)}
       >
-        {item.title}
+       <Link href={item.url}>{item.title}</Link> 
       </NavigationMenuLink>
     </NavigationMenuItem>
   );
