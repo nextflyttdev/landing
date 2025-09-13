@@ -5,6 +5,7 @@ import SectionContainer from "@/components/shared/section-container";
 import HomeFeatures from "@/components/home/home-features";
 import HomeLocations from "@/components/home/home-locations";
 import HomeFeatureHeros from "@/components/home/home-feature-heros";
+import HomeRatings from "@/components/home/home-ratings";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,10 +24,11 @@ export default function Home() {
       <SectionContainer>
         <HomeFeatures />
       </SectionContainer>
-      <HomeLocations/>
+      <HomeRatings/>
       <SectionContainer>
-        <HomeFeatureHeros/>
+        <HomeFeatureHeros />
       </SectionContainer>
+      <HomeLocations />
     </div>
   );
 }

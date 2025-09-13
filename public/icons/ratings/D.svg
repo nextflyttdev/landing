@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 198.43 198.43">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: Calibri-Bold, Calibri;
+        font-weight: 700;
+      }
+
+      .st0, .st1 {
+        font-size: 46.31px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: #323233;
+      }
+
+      .st1 {
+        font-family: Calibri-Light, Calibri;
+      }
+
+      .st1, .st2 {
+        font-weight: 300;
+      }
+
+      .st3 {
+        fill: #fff;
+        stroke: #c6fcff;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .st2 {
+        font-family: Roboto-Light, Roboto;
+        font-size: 17.61px;
+      }
+    </style>
+  </defs>
+  <circle class="st3" cx="99.21" cy="99.21" r="78.83"/>
+  <g>
+    <text class="st0" transform="translate(52.91 107.59)"><tspan x="0" y="0">+4</tspan></text>
+    <text class="st1" transform="translate(105.91 107.59)"><tspan x="0" y="0">år </tspan></text>
+  </g>
+  <text class="st2" transform="translate(54.29 129.93)"><tspan x="0" y="0">I branschen</tspan></text>
+</svg>

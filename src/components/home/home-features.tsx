@@ -10,7 +10,7 @@ const features = [
     vill boka eller behöver support 
     hjälper vi dig gärna, när det passar 
     dig bäst`,
-    image: "/icons/icon_.png",
+    image: "/icons/features/1.svg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const features = [
     professionalism, kvalitet och 
     omtanke, så att du alltid kan 
     känna dig trygg`,
-    image: "/icons/icon_.png",
+    image: "/icons/features/3.svg",
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const features = [
     dagar, helt kostnadsfritt. Din 
     trygghet och tillfredsställelse är 
     alltid vår högsta prioritet`,
-    image: "/icons/icon_.png",
+    image: "/icons/features/2.svg",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const features = [
     lösning som är lika unik som du, 
     effektiv, flexibel och med omtanke 
     i varje detal`,
-    image: "/icons/icon_.png",
+    image: "/icons/features/4.svg",
   },
 ];
 

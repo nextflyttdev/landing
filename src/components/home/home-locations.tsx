@@ -4,7 +4,7 @@ import { locations } from "@/lib/constants/locations";
 
 const HomeLocations = () => {
   return (
-    <div className="bg-neutral-100 w-full">
+    <div className="bg-sky-50/40 w-full">
       <SectionContainer>
         <div className=" w-full flex flex-col gap-4 md:grid md:grid-cols-12 md:gap-8 items-center">
           <div className=" col-span-4 w-full flex flex-col justify-center ">

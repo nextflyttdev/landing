@@ -22,14 +22,26 @@ const HomeHero = () => {
               Din Kompleta <br />
               <span className="text-secondary">flyttpartner</span>{" "}
             </h1>
-            <Button
-              size={"sm"}
-              className="font-bold text-sm"
-              variant={"secondary"}
-              asChild
-            >
-              <Link href={"/offert"}>KOSTNADSFRI OFFERT</Link>
-            </Button>
+            <div className="flex justify-center gap-2 items-center">
+              <Button
+                size={"sm"}
+                className="font-bold text-sm"
+                variant={"secondary"}
+                asChild
+              >
+                <Link href={"/alla-vara-tjanster/privatkun"}>PRIVATKUNDER</Link>
+              </Button>
+              <Button
+                size={"sm"}
+                className="font-bold text-sm"
+                variant={"default"}
+                asChild
+              >
+                <Link href={"/alla-vara-tjanster/foretagskund"}>
+                  FÖRETAGSKUND
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -49,14 +61,26 @@ const HomeHero = () => {
               Din Kompleta <br />{" "}
               <span className="text-secondary">flyttpartner</span>{" "}
             </h1>
-            <Button
-              size={"lg"}
-              className="font-bold"
-              variant={"secondary"}
-              asChild
-            >
-              <Link href={"/offert"}>KOSTNADSFRI OFFERT</Link>
-            </Button>
+            <div className=" flex flex-row justify-start gap-2 items-center mt-6">
+              <Button
+                size={"lg"}
+                className="font-bold"
+                variant={"secondary"}
+                asChild
+              >
+                <Link href={"/alla-vara-tjanster/privatkun"}>PRIVATKUNDER</Link>
+              </Button>
+              <Button
+                size={"lg"}
+                className="font-bold"
+                variant={"default"}
+                asChild
+              >
+                <Link href={"/alla-vara-tjanster/foretagskund"}>
+                  FÖRETAGSKUND
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -37,8 +37,8 @@ interface TopBarProps {
   };
   menu?: MenuItem[];
   button?: {
-         title: string;
-      url: string;
+    title: string;
+    url: string;
   };
 }
 const menuItemServices: MenuItem[] = [
@@ -47,7 +47,7 @@ const menuItemServices: MenuItem[] = [
     description:
       "Utforska alla våra tjänster och hitta rätt hjälp för dina behov.",
     url: "/alla-vara-tjanster",
-    icon: <Grid className="size-5 shrink-0" />,
+    icon: <Grid className="size-5 text-secondary shrink-0" />,
     className: "col-span-2 flex justify-center",
   },
   ...services.map((e) => ({
@@ -58,11 +58,10 @@ const menuItemServices: MenuItem[] = [
   })),
 ];
 
-
 const TopBar = ({
   logo = {
     url: "/",
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
+    src: "/images/logo.png",
     alt: "logo",
     title: "Next Flytt",
   },
@@ -92,8 +91,8 @@ const TopBar = ({
     },
   ],
   button = {
-    title:"KOSTNADSFRI OFFERT",
-    url:"/offert"
+    title: "KOSTNADSFRI OFFERT",
+    url: "/offert",
   },
 }: TopBarProps) => {
   return (
@@ -105,20 +104,20 @@ const TopBar = ({
             {/* Logo */}
             <a href={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-lg font-semibold tracking-tighter">
+              <span className="text-lg font-semibold sr-only tracking-tighter">
                 {logo.title}
               </span>
             </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
+          </div>
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
           <div className="flex gap-2">
-            <Button variant={"secondary"} className="font-semibold" asChild >
+            <Button variant={"secondary"} className="font-semibold" asChild>
               <Link href={button.url}>{button.title}</Link>
             </Button>
           </div>
@@ -173,7 +172,9 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>
-        <NavigationMenuTrigger className="font-semibold">{item.title}</NavigationMenuTrigger>
+        <NavigationMenuTrigger className="font-semibold">
+          {item.title}
+        </NavigationMenuTrigger>
         <NavigationMenuContent
           className={cn("bg-popover text-popover-foreground")}
         >
@@ -209,7 +210,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <AccordionItem key={item.title} value={item.title} className="border-b-0">
-        <AccordionTrigger className="text-md py-0 font-semibold hover:no-underline">
+        <AccordionTrigger className="text-md px-2 py-0 font-semibold hover:no-underline">
           {item.title}
         </AccordionTrigger>
         <AccordionContent className="mt-2">
@@ -222,9 +223,11 @@ const renderMobileMenuItem = (item: MenuItem) => {
   }
 
   return (
-    <a key={item.title} href={item.url} className="text-md font-semibold">
-      {item.title}
-    </a>
+    <Button variant={"ghost"} className=" text-left px-2 text-md flex justify-start" asChild>
+      <a key={item.title} href={item.url} className="text-md  font-semibold">
+        {item.title}
+      </a>
+    </Button>
   );
 };
 
@@ -236,7 +239,7 @@ function ListItem({ item }: { item: MenuItem }) {
           className="hover:bg-muted hover:text-accent-foreground flex w-full select-none flex-row gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors"
           href={item.url}
         >
-          <div className="text-foreground">{item.icon}</div>
+          <div className="text-primary">{item.icon}</div>
           <div>
             <div className="text-sm font-semibold">{item.title}</div>
             {item.description && (
@@ -257,7 +260,7 @@ const SubMenuLink = ({ item }: { item: MenuItem }) => {
       className="hover:bg-muted hover:text-accent-foreground flex min-w-80 select-none flex-row gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors"
       href={item.url}
     >
-      <div className="text-foreground">{item.icon}</div>
+      <div className="text-primary">{item.icon}</div>
       <div>
         <div className="text-sm font-semibold">{item.title}</div>
         {item.description && (

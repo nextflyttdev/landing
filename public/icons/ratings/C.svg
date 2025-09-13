@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 198.43 198.43">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-size: 46.31px;
+      }
+
+      .st0, .st1 {
+        fill: #323233;
+      }
+
+      .st2 {
+        font-family: Calibri-Light, Calibri;
+        letter-spacing: 0em;
+      }
+
+      .st2, .st1 {
+        font-weight: 300;
+      }
+
+      .st3 {
+        fill: #fff;
+        stroke: #c6fcff;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .st4 {
+        font-family: Calibri-Bold, Calibri;
+        font-weight: 700;
+      }
+
+      .st1 {
+        font-family: Roboto-Light, Roboto;
+        font-size: 17.61px;
+      }
+    </style>
+  </defs>
+  <circle class="st3" cx="99.21" cy="99.21" r="78.83"/>
+  <text class="st0" transform="translate(58.86 107.59)"><tspan class="st4" x="0" y="0">50</tspan><tspan class="st2" x="46.95" y="0">%</tspan></text>
+  <text class="st1" transform="translate(57.32 129.93)"><tspan x="0" y="0">Rut-avdrag</tspan></text>
+</svg>
