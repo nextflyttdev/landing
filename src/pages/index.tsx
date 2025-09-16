@@ -6,6 +6,7 @@ import HomeFeatures from "@/components/home/home-features";
 import HomeLocations from "@/components/home/home-locations";
 import HomeFeatureHeros from "@/components/home/home-feature-heros";
 import HomeRatings from "@/components/home/home-ratings";
+import Seo from "@/components/shared/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,11 +21,17 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div className={``}>
+     <Seo
+  route=""
+  image="/images/woman-laptop.jpg"
+  title="NextFlytt – Din kompletta flyttpartner i Stockholm"
+  description="NextFlytt erbjuder professionella flytt- och städtjänster i Stockholm. Vi skapar smidiga och trygga lösningar för både privatpersoner och företag – från flytt till flyttstädning och mer."
+/>
       <HomeHero />
       <SectionContainer>
         <HomeFeatures />
       </SectionContainer>
-      <HomeRatings/>
+      <HomeRatings />
       <SectionContainer>
         <HomeFeatureHeros />
       </SectionContainer>
