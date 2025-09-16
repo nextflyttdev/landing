@@ -11,11 +11,13 @@ import {
 } from "./popover";
 import { Calendar } from "./calendar";
 import { cn } from "@/lib/utils";
+import { Matcher } from "react-day-picker";
 
 interface IDatePicker {
   date: Date | undefined;
   setDate: (date: Date | undefined) => void;
   helper: string;
+  calendarDisabled?: Matcher | Matcher[] | undefined
 }
 
 const DatePicker = (props: IDatePicker) => {
@@ -33,7 +35,7 @@ const DatePicker = (props: IDatePicker) => {
           variant={"outline"}
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
-            "w-full justify-start text-left h-14 text-base font-normal ring-offset-background focus:ring-2 focus:ring-ring",
+            "w-full justify-start text-left text-base bg-white! font-normal! ring-offset-background focus:ring-2 focus:ring-ring",
             !props.date && "text-muted-foreground",
           )}
         >
@@ -49,6 +51,7 @@ const DatePicker = (props: IDatePicker) => {
         <Calendar
           mode="single"
           selected={props.date}
+          disabled={props.calendarDisabled}
           onSelect={handleDateSelect}
           initialFocus
         />

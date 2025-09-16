@@ -21,6 +21,8 @@ const buildings = [
   "apartment",
   "villa",
   "office",
+  "storage",
+  "other",
   "1742801", // special one to exclude
 ] as const;
 
@@ -48,30 +50,30 @@ export type OfferFormData = {
   customerPhone?: string;
   date?: Date;
   service?: Service;
-  address1?: string; // rajorshi will handle
+  address1?: string; 
   area1?: number;
-  extraArea1?: number; // ask junior about the field
-  building1?: Building; // add // done
+  extraArea1?: number; 
+  building1?: Building;
 
   floor1?: string;
-  entranceCode1?: string; // exists for movecleaning // change for all services
-  addressInfo1?: string; // combine with all info, paste in description
+  entranceCode1?: string; 
+  addressInfo1?: string; 
   entrance1?: string;
-  address2?: string; // rajorshi will handle
+  address2?: string; 
   area2?: number;
-  extraArea2?: number; // ask junior about the field
-  building2?: Building; // add // done
+  extraArea2?: number; 
+  building2?: Building; 
 
   floor2?: string;
-  entranceCode2?: string; // does not exist // added
-  addressInfo2?: string; // combine with all info, paste in description
+  entranceCode2?: string; 
+  addressInfo2?: string; 
   entrance2?: string;
-  extraServices?: Service[]; // does not exist ?? paste in description
-  extraServicesInfo?: string; // combine with all info, paste in description
-  specialFurniture: SpecialFurnitureCount; // combine with all info, paste in description
+  extraServices?: Service[]; 
+  extraServicesInfo?: string; 
+  specialFurniture: SpecialFurnitureCount; 
   rut?: boolean;
   discountCode?: string;
-  extraMoveCleanOptions?: string[]; // exists, match values in db to values in form
+  extraMoveCleanOptions?: string[]; 
 };
 
 export type RenderCondition =
@@ -120,6 +122,7 @@ export type CompanyOrPrivate = {
   value: CustomerType;
   title: string;
   subtitle: string;
-  image: string;
+  image?: string;
 };
 
+export type FloorOptions = { key: string; value: string };

@@ -5,16 +5,16 @@ import Link from "next/link";
 const HomeHero = () => {
   return (
     <>
-      <div className=" block md:hidden relative h-[600px] ">
+      <div className=" block lg:hidden relative h-[600px] xl:h-[450px] lg:h-[400px] ">
         <img
-          src={"/images/hero.jpg"}
+          src={"/images/hero-bg.jpg"}
           className=" bg-center object-cover bg-cover h-full w-full"
         />
         <div className=" absolute left-0 top-0 w-full h-full flex flex-col justify-center gap-4 ">
           <div className=" flex justify-center">
             <img
               className=" h-[300px] object-contain   "
-              src={"/images/man2.png"}
+              src={"/images/man.png"}
             />
           </div>
           <div className=" p-4 flex justify-center flex-col items-center gap-4 ">
@@ -45,18 +45,20 @@ const HomeHero = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[url('/images/hero.jpg')] hidden md:block bg-cover bg-center h-[600px] w-full">
-        <div className=" mx-auto h-[600px]  max-w-[1000px] grid grid-cols-2">
-          <div className=" w-full h-full relative">
+      <div className="bg-[url('/images/hero-bg.jpg')]  hidden lg:block bg-cover bg-center h-[600px] xl:h-[450px] lg:h-[400px] w-full">
+   
+        <div className=" mx-auto h-[600px] xl:h-[450px] lg:h-[400px] relative  max-w-[1400px] grid grid-cols-2">
+                <div className=" absolute z-0 left-0 top-0 w-full h-full ">
             <div className=" h-full">
               <img
-                className=" object-contain h-[600px]"
-                src={"/images/man2.png"}
+                className=" object-cover h-full"
+                src={"/images/man.png"}
               />
             </div>
           </div>
-          <div className=" p-4 flex justify-center flex-col items-start gap-4 h-full">
-            <h1 className=" font-bold text-2xl md:text-7xl text-primary">
+          <div></div>
+          <div className=" z-0 p-4 flex justify-center flex-col items-start gap-4 h-full">
+            <h1 className=" font-bold text-2xl lg:text-7xl text-primary">
               {" "}
               Din Kompleta <br />{" "}
               <span className="text-secondary">flyttpartner</span>{" "}

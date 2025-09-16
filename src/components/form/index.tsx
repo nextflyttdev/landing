@@ -3,7 +3,13 @@ import { FormDataKey, useFormStore } from "@/stores/form.store";
 import { ReactNode, useEffect, useMemo } from "react";
 import { StartPage } from "./pages/start-page-form";
 import { FormPageContainer } from "./form-container";
-
+import { MovingFromPage } from "./pages/moving-from-page";
+import { MovingToPage } from "./pages/moving-to-page";
+import { SpecialFurniturePage } from "./pages/special-furniture-page";
+import { SummaryPage } from "./pages/summary-page";
+import { ThrowAndCarryPage } from "./pages/throw-carry-page";
+import { ExtraServicePage } from "./pages/extra-services-page";
+import { MoveCleanPage } from "./pages/move-clean-page";
 
 export function Form(props: { service?: Service }) {
   const {
@@ -37,102 +43,57 @@ export function Form(props: { service?: Service }) {
         "service",
       ],
     },
-
-    // // moving, company moving, transport
-    // {
-    //   element: <MovingFromPage />,
-    //   renderCondition: {
-    //     services: ["move", "movecompany", "transport"],
-    //   },
-    //   mandatoryFields: ["address1", "building1", "floor1", "entrance1"],
-    // },
-    // {
-    //   element: <MovingToPage />,
-    //   renderCondition: {
-    //     services: ["move", "movecompany", "transport"],
-    //   },
-    //   mandatoryFields: ["address2", "building2", "floor2", "entrance2"],
-    // },
-
-    // //piano moving
-    // {
-    //   element: <MovingFromPianoPage />,
-    //   renderCondition: {
-    //     services: ["piano"],
-    //   },
-    //   mandatoryFields: ["address1", "building1", "floor1", "entrance1"],
-    // },
-    // {
-    //   element: <MovingToPianoPage />,
-    //   renderCondition: {
-    //     services: ["piano"],
-    //   },
-    //   mandatoryFields: ["address2", "building2", "floor2", "entrance2"],
-    // },
-
-    // // move, move company and transport
-    // {
-    //   element: <SpecialFurniturePage />,
-    //   renderCondition: {
-    //     services: ["move", "movecompany", "transport"],
-    //   },
-    //   mandatoryFields: [],
-    // },
-    // // Move clean page
-    // {
-    //   element: <MoveCleanPage />,
-    //   renderCondition: {
-    //     services: ["clean"],
-    //   },
-    //   mandatoryFields: ["address1", "area1", "building1"],
-    // },
-    // // Throw and Carry page
-    // {
-    //   element: <ThrowAndCarryPage />,
-    //   renderCondition: {
-    //     services: ["throw", "carry"],
-    //   },
-    //   mandatoryFields: ["address1", "building1", "floor1", "entrance1"],
-    // },
-    // // packing page
-    // {
-    //   element: <PackingPage />,
-    //   renderCondition: {
-    //     services: ["packing"],
-    //   },
-    //   mandatoryFields: ["address1"],
-    // },
-    // // packing page
-    // {
-    //   element: <OtherCleaningPage />,
-    //   renderCondition: {
-    //     services: [
-    //       "big",
-    //       "clearence cleaning",
-    //       "construction",
-    //       "office",
-    //       "show cleaning",
-    //     ],
-    //   },
-    //   mandatoryFields: ["address1", "building1"],
-    // },
-    // All services has this
-    // {
-    //   element: <ExtraServicePage />,
-    //   renderCondition: { alwaysVisible: true },
-    //   mandatoryFields: [],
-    // },
+    {
+      element: <MovingFromPage />,
+      renderCondition: {
+        services: ["move", "movecompany"],
+      },
+      mandatoryFields: ["address1", "building1", "floor1", "entrance1"],
+    },
+    {
+      element: <MovingToPage />,
+      renderCondition: {
+        services: ["move", "movecompany", "transport"],
+      },
+      mandatoryFields: ["address2", "building2", "floor2", "entrance2"],
+    },
+    {
+      element: <SpecialFurniturePage />,
+      renderCondition: {
+        services: ["move", "movecompany"],
+      },
+      mandatoryFields: [],
+    },
+    {
+      element: <MoveCleanPage />,
+      renderCondition: {
+        services: ["clean"],
+      },
+      mandatoryFields: ["address1", "area1", "building1"],
+    },
+    {
+      element: <ThrowAndCarryPage />,
+      renderCondition: {
+        services: ["throw", "carry"],
+      },
+      mandatoryFields: ["address1", "building1", "floor1", "entrance1"],
+    },
+    {
+      element: <ExtraServicePage />,
+      renderCondition: { alwaysVisible: true },
+      mandatoryFields: [],
+    },
     // // All services has this
-    // {
-    //   element: <SummaryPage />,
-    //   renderCondition: { alwaysVisible: true },
-    //   mandatoryFields: [],
-    // },
+    {
+      element: <SummaryPage />,
+      renderCondition: { alwaysVisible: true },
+      mandatoryFields: [],
+    },
   ];
 
   const visiblePages = useMemo(() => {
     const visiblePages = pageComponents.filter((page) =>
-      isPageVisible(page.renderCondition, data.service),
+      isPageVisible(page.renderCondition, data.service)
     );
     return visiblePages;
   }, [data.service]);
@@ -142,10 +103,11 @@ export function Form(props: { service?: Service }) {
     setMandatoryFields(visiblePages[page].mandatoryFields);
   }, [visiblePages, page, thankYou]);
 
+  console.log(visiblePages);
   return (
     <>
       {thankYou ? (
-        < ></>
+        <></>
       ) : (
         <FormPageContainer>{visiblePages[page].element}</FormPageContainer>
       )}

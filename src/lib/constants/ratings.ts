@@ -7,7 +7,7 @@ export const ratings = [
   },
   {
     id: 2,
-    image: "/icons/ratings/c.svg",
+    image: "/icons/ratings/B.svg",
     title: "Certifierade experter",
     icon: "/icons/features/3.svg",
   },

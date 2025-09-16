@@ -96,12 +96,7 @@ export const useFormStore = create<FormStore>((set, get) => ({
     });
   },
   submitForm: () => {
-    set({ submissionLoading: true });
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve("Done waiting!");
-      }, 3000);
-    }).then(() => {});
+  
   },
 
   submissionLoading: false,

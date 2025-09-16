@@ -44,12 +44,12 @@ export function FormPageContainer(props: FormPageContainerProps) {
   };
 
   return (
-    <div className="p-3 rounded-lg" id="top-of-form">
+    <div className="p-6 rounded-lg bg-gray-100" id="top-of-form">
       <div className="mb-4">
         <div className="font-bold">
           Steg {page + 1} av {pagesCount}
         </div>
-        {/* <Progress value={page + 1} total={pagesCount} /> */}
+        <Progress current={page + 1} total={pagesCount} />
       </div>
       <div>{props.children}</div>
       <div className="pb-4 flex justify-between">

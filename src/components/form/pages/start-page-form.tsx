@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useFormStore } from "@/stores/form.store";
 import { FormPageHeader } from "../form-page-header";
+import { ServiceField } from "../fields/service-field";
+import { RadioButtonCustomerType } from "../fields/radio-button-customer-type";
 
 export function StartPage() {
   const { data, setData, errors } = useFormStore();
@@ -26,14 +28,13 @@ export function StartPage() {
       />
       <div className="flex flex-col gap-6 lg:gap-8 w-full">
         <div>
-          {/* <RadioButtonCustomerType
+          <RadioButtonCustomerType
             value={data.customerType}
             onChange={(v) => {
               setData({ customerType: v });
-              pushToServer()
             }}
             name="customerType"
-          /> */}
+          />
         </div>
         <div className="grid w-full items-center gap-1.5" id="customerName">
           <Label htmlFor="name" >
@@ -88,15 +89,14 @@ export function StartPage() {
             </p>
           )}
         </div>
-        <div className="grid w-full items-center gap-0.5">
+        <div className="grid w-full items-center gap-2">
           <div>
-            <Label htmlFor="date">Välj ett datum</Label>
-            <Label className="text-muted-foreground font-normal">
-              (om inte bestämt kan ni lämna fältet tomt)
-            </Label>
+            <Label htmlFor="date">Välj gärna ett datum (Lämna tomt om obestämt.)</Label>
+          
           </div>
           <DatePicker
             date={data.date}
+           calendarDisabled={{before:new Date()}}
             setDate={(e) => {
               setData({ date: e });
             }}
@@ -105,14 +105,13 @@ export function StartPage() {
         </div>
 
         <div className="grid w-full  items-center gap-1.5" id="service">
-          {/* <ServiceField
+          <ServiceField
             error={errors.includes("service")}
             value={data.service}
             onChange={(v) => {
               setData({ service: v });
-              pushToServer()
             }}
-          /> */}
+          />
         </div>
       </div>
     </div>

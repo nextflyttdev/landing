@@ -63,9 +63,9 @@ const HomeFeatures = () => {
           ))}
         </div>
       </div>
-      <div className="  w-[200px] hidden md:block">
-        <div className=" w-[200px] ">
-          <img className=" w-full object-contain" src={"/images/home-features.png"} />
+      <div className="  w-[400px] hidden md:block">
+        <div className=" w-[320px] ">
+          <img className=" w-full rounded-md aspect-square object-cover" src={"/images/home-features.jpg"} />
         </div>
       </div>
     </div>
