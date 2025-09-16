@@ -17,7 +17,6 @@ const SubmitButton = () => {
     setLoading(true);
     try {
       await sendEmail(data);
-      toast.success("E-post skickades framgångsrikt 🎉");
       setThankYou(true)
     } catch (error) {
       console.error("Email error:", error);
