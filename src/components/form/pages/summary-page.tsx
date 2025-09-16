@@ -111,8 +111,6 @@ export function SummaryPage() {
       <div className="flex justify-center mt-4">
       
         <SubmitButton
-          onClick={() => submitForm()}
-          isLoading={submissionLoading}
         />
       </div>
     </div>

@@ -10,8 +10,10 @@ import { SummaryPage } from "./pages/summary-page";
 import { ThrowAndCarryPage } from "./pages/throw-carry-page";
 import { ExtraServicePage } from "./pages/extra-services-page";
 import { MoveCleanPage } from "./pages/move-clean-page";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
-export function Form(props: { service?: Service }) {
+export function Form({ service }: { service?: Service }) {
   const {
     data,
     setData,
@@ -24,9 +26,8 @@ export function Form(props: { service?: Service }) {
 
   useEffect(() => {
     resetForm();
-    if (props.service) setData({ service: props.service });
-  }, [props.service]);
-
+    if (service) setData({ service: service });
+  }, [service]);
   const pageComponents: {
     element: ReactNode;
     renderCondition: RenderCondition;
@@ -103,11 +104,37 @@ export function Form(props: { service?: Service }) {
     setMandatoryFields(visiblePages[page].mandatoryFields);
   }, [visiblePages, page, thankYou]);
 
-  console.log(visiblePages);
   return (
     <>
       {thankYou ? (
-        <></>
+        <div className="flex h-full items-center justify-center">
+          <div>
+            <div className="flex flex-col items-center space-y-2 border-green-200 shadow-lg shadow-green-100 border p-6 rounded-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-28 w-28 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="1"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              <h1 className="text-4xl font-bold">Tack !</h1>
+              <p className="text-gray-600 mt-4">
+                  Tack för ditt intresse! Kolla din e-post för en länk till guiden.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-4 w-full">
+                <Button asChild className="font-bold" variant={"default"}><Link href={"/"}>Startsida</Link></Button>
+                <Button asChild className=" font-bold" variant={"secondary"}><Link href={"/alla-vara-tjanster"}>Våra tjänster</Link></Button>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
         <FormPageContainer>{visiblePages[page].element}</FormPageContainer>
       )}

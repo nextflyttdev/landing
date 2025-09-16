@@ -69,4 +69,5 @@ export const servicesStaticPaths = services.map((e) => ({
   url: e.url,
   description: e.description,
   image: e.image,
+  type:e.type
 }));

@@ -20,6 +20,8 @@ export type FormStore = {
   setMandatoryFields: (fields: string[]) => void;
   errors: FormDataKey[];
   thankYou: boolean;
+  setThankYou: (val: boolean) => void; // ✅ new
+
   submitForm: () => void;
   resetForm: () => void;
   submissionLoading: boolean;
@@ -95,9 +97,8 @@ export const useFormStore = create<FormStore>((set, get) => ({
       thankYou: false,
     });
   },
-  submitForm: () => {
-  
-  },
+  submitForm: () => {},
+  setThankYou: (val) => set({ thankYou: val }), 
 
   submissionLoading: false,
 }));
@@ -125,7 +126,7 @@ function sanitizeData(updatedData: Partial<FormData>) {
 
 function isValidValue(
   key: FormDataKey,
-  value: FormData[FormDataKey]/* (FormData)[keyof FormData] */,
+  value: FormData[FormDataKey] /* (FormData)[keyof FormData] */,
   data: FormData
 ) {
   if (

@@ -5,8 +5,8 @@ import { Loader } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const SubmitButton = (props: { onClick: () => void; isLoading: boolean }) => {
-  const { data } = useFormStore();
+const SubmitButton = () => {
+  const { data,setThankYou } = useFormStore();
 
   const [loading, setLoading] = useState(false);
 
@@ -18,6 +18,7 @@ const SubmitButton = (props: { onClick: () => void; isLoading: boolean }) => {
     try {
       await sendEmail(data);
       toast.success("E-post skickades framgångsrikt 🎉");
+      setThankYou(true)
     } catch (error) {
       console.error("Email error:", error);
       toast.error("Kunde inte skicka e-post. Försök igen senare.");
